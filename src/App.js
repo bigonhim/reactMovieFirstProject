@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import React from "react";
 import { useState,useEffect } from "react";
 import MovieCard from "./MovieCard";
@@ -38,6 +39,7 @@ const App = () => {
           onChange={(e) => {setSearchTerm(e.target.value)}}
           onKeyDown={handleKeyPress}
         />
+        <Analytics/>
         <img src={searchIcon} alt="search" onKeyDown={() => {searchMovies(searchTerm)}} />
       </div>
       {
@@ -62,6 +64,7 @@ const App = () => {
      
     </div>
   );
+  
 };
 
 export default App;
